@@ -68,13 +68,11 @@ function GraphScene() {
           nodes[b].pos,
         ]);
         return (
-          <line key={`${a}-${b}-${idx}`} geometry={geom}>
-            <lineBasicMaterial
-              color={hover === a || hover === b ? "#00FFD1" : "#4b5563"}
-              transparent
-              opacity={hover === a || hover === b ? 0.9 : 0.3}
-            />
-          </line>
+          <primitive key={`${a}-${b}-${idx}`} object={new THREE.Line(geom, new THREE.LineBasicMaterial({
+            color: hover === a || hover === b ? "#00FFD1" : "#4b5563",
+            transparent: true,
+            opacity: hover === a || hover === b ? 0.9 : 0.3
+          }))} />
         );
       })}
 
