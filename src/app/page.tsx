@@ -7,8 +7,8 @@ import LiveFeed from "@/components/LiveFeed";
 import ProblemPromise from "@/components/ProblemPromise";
 import AgentsInConcert from "@/components/AgentsInConcert";
 import BootSequence from "@/components/BootSequence";
+import LiveAgentConsole from "@/components/LiveAgentConsole";
 import { motion } from "framer-motion";
-import { useState } from "react";
 
 const NeuralOrbit = dynamic(() => import("@/components/NeuralOrbit"), {
   ssr: false,
@@ -118,6 +118,9 @@ export default function Home() {
           </div>
         </div>
       </Section>
+
+      {/* Live Agent Console - Real-time AI Demo */}
+      <LiveAgentConsole />
 
       <Section delay={0.05} className="relative z-10">
         <div className="mx-auto max-w-5xl rounded-2xl border-card bg-card/70 px-6 py-14 text-center backdrop-blur">
