@@ -4,7 +4,11 @@ import dynamic from "next/dynamic";
 import Section from "@/components/Section";
 import MemoryGraph from "@/components/MemoryGraph";
 import LiveFeed from "@/components/LiveFeed";
+import ProblemPromise from "@/components/ProblemPromise";
+import AgentsInConcert from "@/components/AgentsInConcert";
+import BootSequence from "@/components/BootSequence";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 const NeuralOrbit = dynamic(() => import("@/components/NeuralOrbit"), {
   ssr: false,
