@@ -24,7 +24,7 @@ function createRandomGenerator(seed = 1) {
 }
 
 export default function LiveFeed() {
-  const generatorRef = useRef<() => number>();
+  const generatorRef = useRef<(() => number) | null>(null);
   if (generatorRef.current == null) {
     generatorRef.current = createRandomGenerator(2025);
   }
@@ -37,7 +37,7 @@ export default function LiveFeed() {
   useEffect(() => {
     const interval = setInterval(() => {
       setItems((prev) => {
-        const generator = generatorRef.current!;
+        const generator = generatorRef.current ?? createRandomGenerator(2025);
         const next = [makeItem(generator), ...prev];
         return next.slice(0, 6);
       });
